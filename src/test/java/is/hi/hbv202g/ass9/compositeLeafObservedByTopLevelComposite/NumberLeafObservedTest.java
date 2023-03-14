@@ -1,30 +1,32 @@
 package is.hi.hbv202g.ass9.compositeLeafObservedByTopLevelComposite;
 
-import static org.junit.Assert.*;
-
+import is.hi.hbv202g.ass9.compositeLeafObservedByComposite.NumberLeaf;
+import is.hi.hbv202g.ass9.compositeLeafObservedByComposite.Observer;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class NumberLeafObservedTest implements Observer {
 
-	private int lastObservedResult;
-	private NumberLeaf number1;
-	
-	@Before
-	public void setUp() {
-		number1 = new NumberLeaf(1);
-	}
-	
-	@Test
-	public void testAttachAndUpdateAfterSetValue() {
-		number1.attach(this);
-		number1.setValue(3);
+    private int lastObservedResult;
+    private NumberLeaf number1;
 
-		assertEquals(3, lastObservedResult);
-	}
+    @Before
+    public void setUp() {
+        number1 = new NumberLeaf(1);
+    }
 
-	@Override
-	public void update() {
-		lastObservedResult=number1.getResult();
-	}
+    @Test
+    public void testAttachAndUpdateAfterSetValue() {
+        number1.attach(this);
+        number1.setValue(3);
+
+        assertEquals(3, lastObservedResult);
+    }
+
+    @Override
+    public void update() {
+        lastObservedResult = number1.getResult();
+    }
 }

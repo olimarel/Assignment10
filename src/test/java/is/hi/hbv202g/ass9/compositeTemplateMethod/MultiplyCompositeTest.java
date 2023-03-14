@@ -1,51 +1,53 @@
 package is.hi.hbv202g.ass9.compositeTemplateMethod;
 
-import static org.junit.Assert.*;
-
+import is.hi.hbv202g.ass9.compositeLeafObserverTemplateMethod.MultiplyComposite;
+import is.hi.hbv202g.ass9.compositeLeafObserverTemplateMethod.NumberLeaf;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class MultiplyCompositeTest {
 
-	private MultiplyComposite multiplyComposite;
+    private MultiplyComposite multiplyComposite;
 
-	@Before
-	public void createMultiplyComposite() {
-		multiplyComposite = new MultiplyComposite();
-	}
+    @Before
+    public void createMultiplyComposite() {
+        multiplyComposite = new MultiplyComposite();
+    }
 
-	@Test
-	public void testOneElementMultiplyComposite() {
+    @Test
+    public void testOneElementMultiplyComposite() {
 
-		NumberLeaf number2 = new NumberLeaf(2);
+        NumberLeaf number2 = new NumberLeaf(2);
 
-		multiplyComposite.add(number2);
-		assertEquals(2, multiplyComposite.getResult());
-	}
+        multiplyComposite.add(number2);
+        assertEquals(2, multiplyComposite.getResult());
+    }
 
-	public void testTwoElementMultiplyComposite() {
+    public void testTwoElementMultiplyComposite() {
 
-		NumberLeaf number2 = new NumberLeaf(2);
-		NumberLeaf number4 = new NumberLeaf(4);
+        NumberLeaf number2 = new NumberLeaf(2);
+        NumberLeaf number4 = new NumberLeaf(4);
 
-		multiplyComposite.add(number2);
-		multiplyComposite.add(number4);
-		assertEquals(8, multiplyComposite.getResult());
-	}
+        multiplyComposite.add(number2);
+        multiplyComposite.add(number4);
+        assertEquals(8, multiplyComposite.getResult());
+    }
 
-	public void testNestedMultiplyComposite() {
+    public void testNestedMultiplyComposite() {
 
-		NumberLeaf number2 = new NumberLeaf(2);
-		NumberLeaf number4 = new NumberLeaf(4);
+        NumberLeaf number2 = new NumberLeaf(2);
+        NumberLeaf number4 = new NumberLeaf(4);
 
-		multiplyComposite.add(number2);
-		multiplyComposite.add(number4);
+        multiplyComposite.add(number2);
+        multiplyComposite.add(number4);
 
-		MultiplyComposite multiplyComposite2 = new MultiplyComposite();
-		multiplyComposite2.add(multiplyComposite);
-		multiplyComposite2.add(multiplyComposite);
-		assertEquals(64, multiplyComposite.getResult());
-	}
+        MultiplyComposite multiplyComposite2 = new MultiplyComposite();
+        multiplyComposite2.add(multiplyComposite);
+        multiplyComposite2.add(multiplyComposite);
+        assertEquals(64, multiplyComposite.getResult());
+    }
 
-	
+
 }

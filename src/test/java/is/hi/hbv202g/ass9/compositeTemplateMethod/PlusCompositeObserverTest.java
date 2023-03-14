@@ -1,27 +1,29 @@
 package is.hi.hbv202g.ass9.compositeTemplateMethod;
 
-import static org.junit.Assert.*;
-
+import is.hi.hbv202g.ass9.compositeLeafObserverTemplateMethod.NumberLeaf;
+import is.hi.hbv202g.ass9.compositeLeafObserverTemplateMethod.PlusComposite;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class PlusCompositeObserverTest {
 
-	private PlusComposite plusComposite;
+    private PlusComposite plusComposite;
 
-	@Before
-	public void createPlusComposite() {
-		plusComposite = new PlusComposite();
-	}
+    @Before
+    public void createPlusComposite() {
+        plusComposite = new PlusComposite();
+    }
 
-	@Test
-	public void testOneElementPlusCompositeObserver() {
-		NumberLeaf number1 = new NumberLeaf(1);
-		plusComposite.add(number1);
+    @Test
+    public void testOneElementPlusCompositeObserver() {
+        NumberLeaf number1 = new NumberLeaf(1);
+        plusComposite.add(number1);
 
-		plusComposite.update(); // This will cause stuff printed on the screen: this is not tested.
+        plusComposite.update(); // This will cause stuff printed on the screen: this is not tested.
 
-		assertEquals(1, plusComposite.getLastObservedResult()); 
-	}
+        assertEquals(1, plusComposite.getLastObservedResult());
+    }
 
 }
