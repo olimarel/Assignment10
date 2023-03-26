@@ -1,5 +1,5 @@
 Created: 2023
-Copyritght holder: Ólafur Marel Árnason
+Copyright holder: Ólafur Marel Árnason
 initial repository creator: Helmut Neukirchen
 
 
