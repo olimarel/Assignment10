@@ -25,6 +25,10 @@ Both the implementation and the tests are in Java package `is.hi.hbv202g.ass9`, 
 
 - 'pom.xml' file supports to execute a main method
 
+## UML class diagram
+
+- link to [UML class diagram](site/resources/UMLClassDiagram.png)
+
 ## License
 
 - [License](LICENSE.txt)
