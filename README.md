@@ -27,7 +27,7 @@ Both the implementation and the tests are in Java package `is.hi.hbv202g.ass9`, 
 
 ## UML class diagram
 
-- link to [UML class diagram](site/resources/UMLClassDiagram.png)
+- link to [UML class diagram](/src/site/resources/UMLClassDiagram.png)
 
 ## License
 
